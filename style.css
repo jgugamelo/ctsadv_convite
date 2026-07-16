@@ -1,0 +1,626 @@
+/* ==========================================================================
+   Estilos Globais e Variáveis de Design (Design System)
+   ========================================================================== */
+:root {
+    --bg-dark: #f0f8f7; /* Fundo verde-gelo médico limpo */
+    --bg-card: rgba(255, 255, 255, 0.75);
+    --border-color: rgba(13, 148, 136, 0.15);
+    --border-hover: rgba(13, 148, 136, 0.4);
+    
+    /* Cores Médicas (Teal / Verde) / Gradientes */
+    --neon-blue: #0d9488; /* Verde médico clássico (Teal-600) */
+    --neon-purple: #14b8a6; /* Ciano de saúde (Teal-500) */
+    --neon-violet: #115e59; /* Verde escuro (Teal-800) */
+    --neon-pink: #d90429;
+    --text-primary: #0f2d2a; /* Texto principal escuro esverdeado */
+    --text-secondary: #234e4a; /* Texto secundário */
+    --text-muted: #4d7c78;
+    
+    /* Gradientes */
+    --grad-text: linear-gradient(135deg, #115e59 0%, #0d9488 50%, #14b8a6 100%);
+    --grad-btn: linear-gradient(135deg, #0d9488 0%, #14b8a6 100%);
+    --grad-card: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.8) 100%);
+    
+    /* Sombras e Blur */
+    --card-shadow: 0 10px 30px rgba(15, 42, 38, 0.05);
+    --neon-shadow-blue: 0 4px 15px rgba(13, 148, 136, 0.2);
+    --neon-shadow-purple: 0 4px 15px rgba(17, 94, 89, 0.1);
+    --glass-blur: blur(16px);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-primary);
+    font-family: 'Inter', sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+    line-height: 1.6;
+}
+
+/* Canvas de Partículas (Background) */
+#particles-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* Container do App (Mobile-First Centrado no Desktop) */
+.app-container {
+    position: relative;
+    z-index: 2;
+    max-width: 580px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.94);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    border-left: 1px solid var(--border-color);
+    border-right: 1px solid var(--border-color);
+    box-shadow: 0 10px 50px rgba(15, 23, 42, 0.08);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ==========================================================================
+   Hero Banner / Cabeçalho
+   ========================================================================== */
+.hero-banner {
+    position: relative;
+    height: 380px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 30px 24px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.hero-banner::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(to top, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+    pointer-events: none;
+}
+
+/* Badge do Organizador (Crux) */
+.crux-badge-container {
+    position: absolute;
+    top: 24px;
+    left: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+    background: rgba(255, 255, 255, 0.98);
+    padding: 10px 20px;
+    border-radius: 14px;
+    border: 1px solid rgba(20, 184, 166, 0.2);
+    box-shadow: 0 8px 30px rgba(15, 23, 42, 0.1);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+}
+
+.organizer-label {
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #64748b;
+    font-weight: 600;
+}
+
+.crux-logo-badge {
+    height: 48px; /* Aumentado para melhor leitura */
+    width: auto;
+    object-fit: contain;
+}
+
+/* Conteúdo do Hero */
+.hero-content {
+    position: relative;
+    z-index: 3;
+    animation: fadeInUp 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.event-tag {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--neon-blue);
+    background: rgba(13, 148, 136, 0.08);
+    border: 1px solid rgba(13, 148, 136, 0.18);
+    padding: 4px 12px;
+    border-radius: 20px;
+    display: inline-block;
+    margin-bottom: 12px;
+}
+
+.main-title {
+    font-family: 'Outfit', sans-serif;
+    font-size: 2.8rem;
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -0.5px;
+    margin-bottom: 8px;
+}
+
+.highlight-text {
+    background: var(--grad-text);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 1px 4px rgba(13, 148, 136, 0.15));
+}
+
+.subtitle {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: var(--text-secondary);
+    letter-spacing: 0.5px;
+}
+
+.title-divider {
+    width: 60px;
+    height: 4px;
+    background: var(--grad-text);
+    border-radius: 2px;
+    margin-top: 16px;
+}
+
+/* ==========================================================================
+   Corpo do Convite
+   ========================================================================== */
+.content-wrapper {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    flex-grow: 1;
+}
+
+/* Seção de Contagem Regressiva */
+.countdown-section {
+    background: var(--grad-card);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: var(--card-shadow);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    animation: fadeInUp 1s cubic-bezier(0.16, 1, 0.3, 1) 0.2s both;
+}
+
+.section-title-alt {
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.75rem;
+    letter-spacing: 3px;
+    color: var(--text-secondary);
+    margin-bottom: 16px;
+    text-transform: uppercase;
+}
+
+.countdown-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
+
+.countdown-card {
+    background: rgba(13, 148, 136, 0.04);
+    border: 1px solid rgba(13, 148, 136, 0.1);
+    border-radius: 12px;
+    padding: 12px 6px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.countdown-card:hover {
+    transform: translateY(-2px);
+    border-color: var(--border-hover);
+}
+
+.countdown-value {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--neon-blue);
+    line-height: 1;
+    margin-bottom: 4px;
+    text-shadow: 0 1px 2px rgba(13, 148, 136, 0.15);
+}
+
+.countdown-label {
+    font-size: 0.65rem;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Grid de Informações */
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+}
+
+.info-card {
+    background: var(--grad-card);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    box-shadow: var(--card-shadow);
+    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.info-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--border-hover);
+    box-shadow: 0 12px 40px rgba(13, 148, 136, 0.06);
+}
+
+.full-width-card {
+    grid-column: span 2;
+}
+
+.card-icon-wrapper {
+    width: 44px;
+    height: 44px;
+    background: rgba(13, 148, 136, 0.06);
+    border: 1px solid rgba(13, 148, 136, 0.15);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--neon-blue);
+    filter: drop-shadow(0 1px 4px rgba(13, 148, 136, 0.15));
+}
+
+.card-icon {
+    width: 22px;
+    height: 22px;
+}
+
+.card-body h3 {
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--text-muted);
+    margin-bottom: 6px;
+}
+
+.card-main-text {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    line-height: 1.3;
+}
+
+.card-sub-text {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin-top: 2px;
+}
+
+.address-text {
+    margin-bottom: 12px;
+}
+
+/* Badge do Happy Hour */
+.happy-hour-badge {
+    margin-top: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: linear-gradient(90deg, rgba(127, 0, 255, 0.06) 0%, rgba(255, 0, 127, 0.03) 100%);
+    border: 1px solid rgba(127, 0, 255, 0.15);
+    padding: 6px 12px;
+    border-radius: 10px;
+    font-size: 0.72rem;
+    font-weight: 500;
+    color: #6b21a8;
+    box-shadow: 0 2px 8px rgba(127, 0, 255, 0.05);
+}
+
+.beer-icon {
+    width: 14px;
+    height: 14px;
+    color: #d97706;
+}
+
+/* Botão Link do Mapa */
+.map-link-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--neon-blue);
+    transition: opacity 0.2s, transform 0.2s;
+    margin-top: 4px;
+}
+
+.map-link-btn:hover {
+    opacity: 0.85;
+    transform: translateX(2px);
+}
+
+.arrow-icon {
+    width: 14px;
+    height: 14px;
+}
+
+/* Botão de Ação: Adicionar ao Calendário */
+.action-section {
+    display: flex;
+    justify-content: center;
+    animation: fadeInUp 1s cubic-bezier(0.16, 1, 0.3, 1) 0.5s both;
+}
+
+.primary-action-btn {
+    width: 100%;
+    max-width: 320px;
+    background: var(--grad-btn);
+    border: none;
+    border-radius: 14px;
+    padding: 16px 24px;
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #07080d;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    box-shadow: var(--neon-shadow-blue);
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease, filter 0.3s ease;
+}
+
+.primary-action-btn:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 25px rgba(45, 212, 191, 0.7);
+    filter: brightness(1.05);
+}
+
+.primary-action-btn:active {
+    transform: scale(0.98);
+}
+
+.btn-icon {
+    width: 18px;
+    height: 18px;
+}
+
+/* ==========================================================================
+   Seção de Patrocinadores
+   ========================================================================== */
+.sponsors-section {
+    border-top: 1px solid var(--border-color);
+    padding-top: 32px;
+    text-align: center;
+    animation: fadeInUp 1s cubic-bezier(0.16, 1, 0.3, 1) 0.6s both;
+}
+
+.sponsors-title {
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--text-secondary);
+    margin-bottom: 24px;
+}
+
+.sponsors-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    align-items: center;
+}
+
+.sponsor-card {
+    background: rgba(13, 148, 136, 0.02);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 16px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    transition: transform 0.3s ease, border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.sponsor-card:hover {
+    transform: translateY(-3px);
+    border-color: var(--border-hover);
+    background: rgba(20, 184, 166, 0.04);
+}
+
+.sponsor-logo-wrapper {
+    height: 55px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #ffffff;
+    border: 1px solid rgba(20, 184, 166, 0.15);
+    border-radius: 12px;
+    padding: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04), inset 0 1px 3px rgba(0, 0, 0, 0.02);
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.sponsor-logo {
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.sponsor-card:hover .sponsor-logo-wrapper {
+    background: #ffffff;
+    transform: scale(1.05);
+    border-color: var(--border-hover);
+    box-shadow: 0 8px 20px rgba(13, 148, 136, 0.15);
+}
+
+.sponsor-name {
+    font-size: 0.62rem;
+    color: var(--text-muted);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+}
+
+.sponsor-card:hover .sponsor-name {
+    color: var(--text-primary);
+}
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+.app-footer {
+    padding: 32px 24px;
+    text-align: center;
+    border-top: 1px solid var(--border-color);
+    margin-top: auto;
+}
+
+.app-footer p {
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    letter-spacing: 0.5px;
+}
+
+/* ==========================================================================
+   Animações
+   ========================================================================== */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(24px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.95;
+        transform: scale(1.02);
+        box-shadow: 0 0 15px rgba(127, 0, 255, 0.25);
+    }
+}
+
+.animate-pulse {
+    animation: pulse 2.5s infinite ease-in-out;
+}
+
+/* Efeito de fade-in sequencial */
+.fade-in-up {
+    animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.delay-1 {
+    animation-delay: 0.15s;
+}
+
+.delay-2 {
+    animation-delay: 0.3s;
+}
+
+/* ==========================================================================
+   Media Queries para Responsividade
+   ========================================================================== */
+@media (max-width: 480px) {
+    .app-container {
+        border-left: none;
+        border-right: none;
+    }
+    
+    .hero-banner {
+        height: 320px;
+        padding: 20px 16px;
+    }
+    
+    .main-title {
+        font-size: 2.2rem;
+    }
+    
+    .subtitle {
+        font-size: 1.15rem;
+    }
+    
+    .content-wrapper {
+        padding: 16px;
+        gap: 24px;
+    }
+    
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .full-width-card {
+        grid-column: span 1;
+    }
+    
+    .countdown-value {
+        font-size: 1.45rem;
+    }
+    
+    .sponsors-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+    
+    .sponsor-card {
+        flex-direction: row;
+        justify-content: flex-start;
+        padding: 12px 20px;
+        gap: 20px;
+    }
+    
+    .sponsor-logo-wrapper {
+        width: 60px;
+        height: 35px;
+        display: flex;
+        justify-content: flex-start;
+    }
+    
+    .sponsor-name {
+        font-size: 0.75rem;
+    }
+}
