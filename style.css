@@ -378,7 +378,9 @@ body {
 /* Botão de Ação: Adicionar ao Calendário */
 .action-section {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
     animation: fadeInUp 1s cubic-bezier(0.16, 1, 0.3, 1) 0.5s both;
 }
 
@@ -392,19 +394,20 @@ body {
     font-family: 'Outfit', sans-serif;
     font-size: 0.95rem;
     font-weight: 600;
-    color: #07080d;
+    color: #ffffff;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 10px;
+    text-decoration: none;
     box-shadow: var(--neon-shadow-blue);
     transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease, filter 0.3s ease;
 }
 
 .primary-action-btn:hover {
     transform: scale(1.03);
-    box-shadow: 0 0 25px rgba(45, 212, 191, 0.7);
+    box-shadow: 0 0 25px rgba(20, 184, 166, 0.5);
     filter: brightness(1.05);
 }
 
@@ -412,9 +415,109 @@ body {
     transform: scale(0.98);
 }
 
+.secondary-action-btn {
+    width: 100%;
+    max-width: 320px;
+    background: rgba(13, 148, 136, 0.05);
+    border: 1px solid rgba(13, 148, 136, 0.25);
+    border-radius: 14px;
+    padding: 14px 24px;
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--neon-blue);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: transform 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.secondary-action-btn:hover {
+    transform: translateY(-2px);
+    background: rgba(13, 148, 136, 0.1);
+    border-color: var(--neon-blue);
+}
+
+.secondary-action-btn:active {
+    transform: scale(0.98);
+}
+
 .btn-icon {
     width: 18px;
     height: 18px;
+}
+
+/* Botão CTA do Cabeçalho (Hero) */
+.hero-cta-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--neon-violet);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 30px;
+    padding: 12px 28px;
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #ffffff;
+    text-decoration: none;
+    margin-top: 20px;
+    box-shadow: 0 4px 15px rgba(17, 94, 89, 0.25);
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.hero-cta-btn:hover {
+    transform: scale(1.05);
+    background: #0d4b47;
+    box-shadow: 0 8px 25px rgba(17, 94, 89, 0.4);
+}
+
+.arrow-icon-small {
+    width: 16px;
+    height: 16px;
+    transition: transform 0.3s ease;
+    stroke: #ffffff;
+}
+
+.hero-cta-btn:hover .arrow-icon-small {
+    transform: translateX(4px);
+}
+
+/* Seção de CTA Final */
+.final-cta-section {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.final-cta-card {
+    background: linear-gradient(135deg, rgba(13, 148, 136, 0.08) 0%, rgba(20, 184, 166, 0.03) 100%);
+    border: 1px solid rgba(13, 148, 136, 0.2);
+    border-radius: 24px;
+    padding: 32px 24px;
+    text-align: center;
+    box-shadow: var(--card-shadow);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+
+.final-cta-card h3 {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--neon-violet);
+    margin: 0;
+}
+
+.final-cta-card p {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    max-width: 420px;
+    margin: 0 auto;
 }
 
 /* ==========================================================================
