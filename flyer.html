@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flyer - Inovação na Área Médica</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        /* CSS de Nível de Impressão e Layout A4 Fixo */
+        @page {
+            size: A4;
+            margin: 0;
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            width: 794px; /* A4 em 96 DPI */
+            height: 1123px; /* A4 em 96 DPI */
+            font-family: 'Inter', sans-serif;
+            color: #0f2d2a;
+            background-color: #ffffff;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+            overflow: hidden;
+        }
+        
+        /* Container Principal do Flyer */
+        .flyer-container {
+            width: 794px;
+            height: 1123px;
+            padding: 45px 50px 35px 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+            background: #ffffff;
+        }
+        
+        /* Detalhe de Borda Decorativa Teal */
+        .flyer-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 8px;
+            background: linear-gradient(90deg, #115e59 0%, #0d9488 50%, #14b8a6 100%);
+        }
+        
+        /* Cabeçalho do Flyer */
+        .header-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #e0f2fe;
+            padding-bottom: 25px;
+        }
+        
+        .header-left {
+            max-width: 480px;
+        }
+        
+        .event-tag {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.72rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: #0d9488;
+            background: rgba(13, 148, 136, 0.08);
+            border: 1px solid rgba(13, 148, 136, 0.18);
+            padding: 4px 12px;
+            border-radius: 20px;
+            display: inline-block;
+            margin-bottom: 12px;
+        }
+        
+        .main-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2.3rem;
+            font-weight: 800;
+            line-height: 1.15;
+            color: #0f2d2a;
+            margin-bottom: 6px;
+        }
+        
+        .highlight-text {
+            background: linear-gradient(135deg, #115e59 0%, #0d9488 50%, #14b8a6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .subtitle {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 500;
+            color: #4d7c78;
+        }
+        
+        .header-right {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 4px;
+        }
+        
+        .realizacao-label {
+            font-size: 0.6rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #64748b;
+            font-weight: 600;
+        }
+        
+        .crux-logo {
+            height: 48px;
+            width: auto;
+            object-fit: contain;
+        }
+        
+        /* Conteúdo Principal (2 Colunas) */
+        .content-section {
+            display: flex;
+            justify-content: space-between;
+            flex-grow: 1;
+            gap: 40px;
+            margin-bottom: 25px;
+        }
+        
+        .column-left {
+            width: 320px;
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+        
+        .column-right {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+        
+        /* Blocos de Informação */
+        .info-block {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .info-icon-wrapper {
+            width: 40px;
+            height: 40px;
+            background: rgba(13, 148, 136, 0.06);
+            border: 1px solid rgba(13, 148, 136, 0.15);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #0d9488;
+            flex-shrink: 0;
+        }
+        
+        .info-icon {
+            width: 20px;
+            height: 20px;
+        }
+        
+        .info-text h3 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: #4d7c78;
+            margin-bottom: 4px;
+        }
+        
+        .info-text .main-val {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #0f2d2a;
+        }
+        
+        .info-text .sub-val {
+            font-size: 0.82rem;
+            color: #64748b;
+            margin-top: 2px;
+        }
+        
+        /* Happy hour específico */
+        .happy-hour-badge {
+            margin-top: 6px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            background: linear-gradient(90deg, rgba(127, 0, 255, 0.05) 0%, rgba(255, 0, 127, 0.02) 100%);
+            border: 1px solid rgba(127, 0, 255, 0.15);
+            padding: 4px 8px;
+            border-radius: 8px;
+            font-size: 0.72rem;
+            font-weight: 600;
+            color: #6b21a8;
+        }
+        
+        /* Bloco de Inscrição / QR Code */
+        .registration-block {
+            background: linear-gradient(135deg, rgba(13, 148, 136, 0.06) 0%, rgba(20, 184, 166, 0.02) 100%);
+            border: 1px solid rgba(13, 148, 136, 0.2);
+            border-radius: 16px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 12px;
+            margin-top: auto;
+        }
+        
+        .registration-block h3 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1rem;
+            font-weight: 700;
+            color: #115e59;
+        }
+        
+        .registration-block p {
+            font-size: 0.78rem;
+            color: #234e4a;
+            line-height: 1.4;
+        }
+        
+        .qr-code-img {
+            width: 110px;
+            height: 110px;
+            background: #ffffff;
+            border: 1px solid rgba(13, 148, 136, 0.15);
+            padding: 6px;
+            border-radius: 10px;
+        }
+        
+        .registration-link {
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: #0d9488;
+            text-decoration: none;
+            word-break: break-all;
+            border-bottom: 1.5px solid rgba(13, 148, 136, 0.3);
+            padding-bottom: 2px;
+        }
+        
+        /* Seção da Direita (Programação) */
+        .schedule-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #0d9488;
+            border-left: 3px solid #0d9488;
+            padding-left: 8px;
+            margin-bottom: 12px;
+        }
+        
+        .guest-item {
+            margin-bottom: 12px;
+            padding-bottom: 12px;
+            border-bottom: 1px dashed rgba(13, 148, 136, 0.15);
+        }
+        
+        .guest-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        
+        .guest-tag {
+            font-size: 0.58rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            padding: 2px 8px;
+            border-radius: 10px;
+            display: inline-block;
+            margin-bottom: 4px;
+        }
+        
+        .guest-tag.opening {
+            color: #b45309;
+            background: rgba(217, 119, 6, 0.08);
+            border: 1px solid rgba(217, 119, 6, 0.15);
+        }
+        
+        .guest-tag.special {
+            color: #6d28d9;
+            background: rgba(109, 40, 217, 0.08);
+            border: 1px solid rgba(109, 40, 217, 0.15);
+        }
+        
+        .guest-item h4 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: #0f2d2a;
+        }
+        
+        .guest-item p {
+            font-size: 0.78rem;
+            color: #627d98;
+            line-height: 1.35;
+        }
+        
+        .guest-item .theme-text {
+            font-size: 0.8rem;
+            color: #234e4a;
+            font-weight: 500;
+            margin-top: 3px;
+        }
+        
+        /* Tópicos dos Painéis */
+        .topic-item {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+            margin-bottom: 10px;
+        }
+        
+        .topic-item:last-child {
+            margin-bottom: 0;
+        }
+        
+        .topic-item h4 {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: #0f2d2a;
+            line-height: 1.3;
+        }
+        
+        .topic-item p {
+            font-size: 0.75rem;
+            color: #627d98;
+        }
+        
+        .topic-item .speaker-name {
+            color: #0d9488;
+            font-weight: 600;
+        }
+        
+        /* Seção de Patrocinadores (Rodapé) */
+        .footer-section {
+            border-top: 2px solid #e0f2fe;
+            padding-top: 25px;
+            text-align: center;
+        }
+        
+        .sponsors-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #627d98;
+            margin-bottom: 16px;
+        }
+        
+        .sponsors-grid {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 50px;
+        }
+        
+        .sponsor-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+        }
+        
+        .sponsor-logo-box {
+            height: 44px;
+            width: 110px;
+            background: #ffffff;
+            border: 1px solid rgba(13, 148, 136, 0.15);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 6px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+        }
+        
+        .sponsor-logo {
+            max-height: 100%;
+            max-width: 100%;
+            object-fit: contain;
+        }
+        
+        .sponsor-label {
+            font-size: 0.55rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            color: #94a3b8;
+            letter-spacing: 0.5px;
+        }
+        
+        /* Nota Legal Rodapé */
+        .bottom-note {
+            font-size: 0.65rem;
+            color: #94a3b8;
+            text-align: center;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="flyer-container">
+        <!-- Cabeçalho -->
+        <header class="header-section">
+            <div class="header-left">
+                <span class="event-tag">Painel & Networking</span>
+                <h1 class="main-title">Inovação na<br><span class="highlight-text">Área Médica</span></h1>
+                <p class="subtitle">O Rio como Protagonista</p>
+            </div>
+            <div class="header-right">
+                <span class="realizacao-label">Realização</span>
+                <img src="assets/Crux.png" alt="CRUX" class="crux-logo">
+            </div>
+        </header>
+
+        <!-- Corpo Principal (2 colunas) -->
+        <div class="content-section">
+            <!-- Coluna da Esquerda: Detalhes e Inscrição -->
+            <div class="column-left">
+                <!-- Bloco Data -->
+                <div class="info-block">
+                    <div class="info-icon-wrapper">
+                        <svg class="info-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                            <line x1="16" y1="2" x2="16" y2="6"></line>
+                            <line x1="8" y1="2" x2="8" y2="6"></line>
+                            <line x1="3" y1="10" x2="21" y2="10"></line>
+                        </svg>
+                    </div>
+                    <div class="info-text">
+                        <h3>Data</h3>
+                        <p class="main-val">11 de Agosto de 2026</p>
+                        <p class="sub-val">Terça-feira</p>
+                    </div>
+                </div>
+
+                <!-- Bloco Horário -->
+                <div class="info-block">
+                    <div class="info-icon-wrapper">
+                        <svg class="info-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <polyline points="12 6 12 12 16 14"></polyline>
+                        </svg>
+                    </div>
+                    <div class="info-text">
+                        <h3>Horário</h3>
+                        <p class="main-val">16h às 20h</p>
+                        <div class="happy-hour-badge">
+                            <span>19h às 20h: Happy Hour com Chopp</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bloco Local -->
+                <div class="info-block">
+                    <div class="info-icon-wrapper">
+                        <svg class="info-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                            <circle cx="12" cy="10" r="3"></circle>
+                        </svg>
+                    </div>
+                    <div class="info-text">
+                        <h3>Local</h3>
+                        <p class="main-val">Maravalley</p>
+                        <p class="sub-val">Hub de Inovação Carioca</p>
+                        <p class="sub-val" style="font-size: 0.75rem; margin-top: 2px;">Av. Prof. Pereira Reis, 76 - Santo Cristo, RJ</p>
+                    </div>
+                </div>
+
+                <!-- Bloco de Inscrição / QR Code -->
+                <div class="registration-block">
+                    <h3>Inscrição Gratuita</h3>
+                    <p>Escaneie o QR Code abaixo para garantir sua vaga (vagas limitadas):</p>
+                    <!-- Imagem do QR Code ligada à URL do Vercel para fácil acesso -->
+                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://docs.google.com/forms/d/e/1FAIpQLSeNZkbM3cO77--EV81ZFKofpMlSZFeR1QSMPS9KRzoDExnu2w/viewform" alt="QR Code Inscrição" class="qr-code-img">
+                    <a href="https://ctsadv-convite.vercel.app" class="registration-link" target="_blank">ctsadv-convite.vercel.app</a>
+                </div>
+            </div>
+
+            <!-- Coluna da Direita: Programação -->
+            <div class="column-right">
+                <!-- Convidados Especiais -->
+                <div>
+                    <h3 class="schedule-title">Convidados Especiais</h3>
+                    
+                    <div class="guest-item">
+                        <span class="guest-tag opening">Abertura</span>
+                        <h4>Dr. Daniel Soranz</h4>
+                        <p>Médico Sanitarista, Deputado Federal e Secretário Municipal de Saúde do RJ</p>
+                    </div>
+
+                    <div class="guest-item">
+                        <span class="guest-tag special">Palestra Destaque</span>
+                        <h4>Dr. Tiago Velloso</h4>
+                        <p class="theme-text">"Transformação Digital na Saúde: Construindo Valor, Confiança e Sustentabilidade no SUS"</p>
+                        <p>Diretor Geral do Hospital Municipal Evandro Freire</p>
+                    </div>
+                </div>
+
+                <!-- Painéis e Temas -->
+                <div style="margin-top: 5px;">
+                    <h3 class="schedule-title">Temas em Debate</h3>
+                    
+                    <div class="topic-item">
+                        <h4>A responsabilidade civil médica diante do uso de ferramentas baseadas em IA</h4>
+                        <p>Palestrante: <span class="speaker-name">William Teodoro da Silva</span> (Sócio CTSADV e Mestre em Direito)</p>
+                    </div>
+
+                    <div class="topic-item">
+                        <h4>Proteção de dados pessoais e a LGPD na área da saúde</h4>
+                        <p>Palestrante: <span class="speaker-name">Karine Teixeira F. Monteiro</span> (Sócia CTSADV e Esp. Direito Empresarial)</p>
+                    </div>
+
+                    <div class="topic-item">
+                        <h4>Prontuário Eletrônico como instrumento de segurança jurídica</h4>
+                        <p>Palestrante: <span class="speaker-name">Carlos Alberto Marenga Junior</span> (Médico Intensivista e Advogado)</p>
+                    </div>
+
+                    <div class="topic-item">
+                        <h4>Infraestrutura, interoperabilidade e mitigação de riscos</h4>
+                        <p>Palestrante: <span class="speaker-name">Dr. Vitor Montez Vianna</span> (Esp. Medicina Intensiva e Anestesiologia)</p>
+                    </div>
+
+                    <div class="topic-item">
+                        <h4>Comissão de Inovação em Saúde: experiência prática hospitalar</h4>
+                        <p>Palestrante: <span class="speaker-name">Dr. Berguer Elias G. de Sousa</span> (Médico e Diretor do CER Leblon)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Rodapé / Patrocinadores -->
+        <footer class="footer-section">
+            <h3 class="sponsors-title">Apoio e Patrocínio</h3>
+            <div class="sponsors-grid">
+                <div class="sponsor-item">
+                    <div class="sponsor-logo-box">
+                        <img src="assets/CTSADV.png" alt="CTSADV" class="sponsor-logo">
+                    </div>
+                    <span class="sponsor-label">CTSADV</span>
+                </div>
+                <div class="sponsor-item">
+                    <div class="sponsor-logo-box">
+                        <img src="assets/Avivus.png" alt="AVIVUS" class="sponsor-logo">
+                    </div>
+                    <span class="sponsor-label">Avivus</span>
+                </div>
+                <div class="sponsor-item">
+                    <div class="sponsor-logo-box">
+                        <img src="assets/Maravalley.png" alt="MARAVALLEY" class="sponsor-logo">
+                    </div>
+                    <span class="sponsor-label">Maravalley</span>
+                </div>
+            </div>
+            <p class="bottom-note">© 2026 CRUX Comunidade de Inovação. Vagas limitadas, sujeito à lotação.</p>
+        </footer>
+    </div>
+</body>
+</html>
