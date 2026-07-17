@@ -222,3 +222,27 @@ if (addCalendarBtn) {
         window.open(googleCalendarUrl, '_blank');
     });
 }
+
+/* ==========================================================================
+   Accordion / Expandir Mini Currículos
+   ========================================================================== */
+const bioToggleBtns = document.querySelectorAll('.bio-toggle-btn');
+
+bioToggleBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+        const bioContent = btn.nextElementSibling;
+        const isExpanded = btn.getAttribute('aria-expanded') === 'true';
+        
+        // Alterna o estado aria-expanded
+        btn.setAttribute('aria-expanded', !isExpanded);
+        
+        // Alterna a classe active no conteúdo
+        if (!isExpanded) {
+            bioContent.classList.add('active');
+            btn.querySelector('span').innerText = 'Fechar mini currículo';
+        } else {
+            bioContent.classList.remove('active');
+            btn.querySelector('span').innerText = 'Ver mini currículo';
+        }
+    });
+});

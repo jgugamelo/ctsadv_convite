@@ -562,6 +562,199 @@ body {
     animation-delay: 0.3s;
 }
 
+.delay-3 {
+    animation-delay: 0.45s;
+}
+
+/* ==========================================================================
+   Seção de Programação & Palestrantes
+   ========================================================================== */
+.schedule-section {
+    border-top: 1px solid var(--border-color);
+    padding-top: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.schedule-section-title {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+    text-align: center;
+    background: var(--grad-text);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 4px;
+}
+
+.schedule-section-intro {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    text-align: center;
+    max-width: 480px;
+    margin: 0 auto 12px auto;
+    line-height: 1.5;
+}
+
+.subsection-title {
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--neon-blue);
+    border-left: 3px solid var(--neon-blue);
+    padding-left: 10px;
+    margin-bottom: 16px;
+    margin-top: 12px;
+}
+
+.special-guests-container,
+.topics-container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+.guest-card,
+.topic-card {
+    background: var(--grad-card);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: var(--card-shadow);
+    display: flex;
+    flex-direction: column;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.guest-card:hover,
+.topic-card:hover {
+    border-color: var(--border-hover);
+    box-shadow: 0 12px 30px rgba(13, 148, 136, 0.06);
+}
+
+.guest-header h4,
+.topic-header h4 {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 6px;
+}
+
+.guest-subtitle,
+.speaker-subtitle {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    line-height: 1.4;
+    margin-top: 4px;
+}
+
+.guest-title-theme {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    margin-bottom: 6px;
+    line-height: 1.45;
+}
+
+.speaker-name {
+    font-size: 0.95rem;
+    color: var(--neon-blue);
+    margin-top: 4px;
+}
+
+/* Badges */
+.card-badge-row {
+    margin-bottom: 10px;
+    display: flex;
+    gap: 8px;
+}
+
+.guest-tag-role,
+.topic-tag {
+    font-size: 0.65rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 3px 10px;
+    border-radius: 20px;
+    display: inline-block;
+}
+
+.guest-tag-role.opening {
+    color: #b45309;
+    background: rgba(217, 119, 6, 0.08);
+    border: 1px solid rgba(217, 119, 6, 0.18);
+}
+
+.guest-tag-role.special {
+    color: #6d28d9;
+    background: rgba(109, 40, 217, 0.08);
+    border: 1px solid rgba(109, 40, 217, 0.18);
+}
+
+.topic-tag {
+    color: var(--neon-blue);
+    background: rgba(13, 148, 136, 0.08);
+    border: 1px solid rgba(13, 148, 136, 0.18);
+    margin-bottom: 10px;
+    align-self: flex-start;
+}
+
+/* Accordion Toggle Button */
+.bio-toggle-btn {
+    background: none;
+    border: none;
+    outline: none;
+    color: var(--neon-blue);
+    font-size: 0.8rem;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 12px;
+    cursor: pointer;
+    padding: 4px 0;
+    align-self: flex-start;
+    transition: opacity 0.2s;
+}
+
+.bio-toggle-btn:hover {
+    opacity: 0.8;
+}
+
+.chevron-icon {
+    width: 14px;
+    height: 14px;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.bio-toggle-btn[aria-expanded="true"] .chevron-icon {
+    transform: rotate(180deg);
+}
+
+/* Accordion Bio Content */
+.bio-content {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease, margin 0.3s ease, padding 0.3s ease;
+    font-size: 0.82rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+}
+
+.bio-content.active {
+    max-height: 380px; /* Ajuste seguro para comportar o texto */
+    opacity: 1;
+    padding-top: 12px;
+    margin-top: 12px;
+    border-top: 1px dashed rgba(13, 148, 136, 0.15);
+}
+
 /* ==========================================================================
    Media Queries para Responsividade
    ========================================================================== */
