@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CTSADV - Folheto Institucional A4 Gráfica (PDF/X-1a CMYK)</title>
+    <title>CTSADV - Folheto Institucional A4 Gráfica (21,30 x 30,00 cm)</title>
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -11,9 +11,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
     
     <style>
-        /* Formato A4 com Margem de Sangria de 3mm em toda a volta (Bleed: 216mm x 303mm) */
+        /* Tamanho Exato Solicitado pela Gráfica: 21,30cm x 30,00cm */
         @page {
-            size: 216mm 303mm;
+            size: 21.30cm 30.00cm;
             margin: 0;
         }
         
@@ -31,10 +31,10 @@
             print-color-adjust: exact;
         }
         
-        /* Container A4 com Sangria de 3mm (816px x 1145px a 96DPI) */
+        /* Container A4 com Sangria Exata de 21,30cm x 30,00cm (805px x 1134px a 96DPI) */
         .a4-page {
-            width: 816px;
-            height: 1145px;
+            width: 805px;
+            height: 1134px;
             position: relative;
             background: #ffffff;
             margin: 0 auto;
@@ -43,11 +43,9 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            /* Area de Sangria 3mm (approx 11px) de cada lado */
-            padding: 11px;
+            padding: 0;
         }
 
-        /* Area Útil de Segurança (Inner Safety Box) */
         .safe-area {
             width: 100%;
             height: 100%;
@@ -70,17 +68,14 @@
             .a4-page:last-child {
                 page-break-after: avoid;
             }
-            .safe-area {
-                border: none;
-            }
         }
 
-        /* Cores Institucionais CTSADV (CMYK C:100 M:90 Y:35 K:50) */
+        /* Cores Institucionais CTSADV (C:100 M:90 Y:35 K:50 -> #0e1548) */
         :root {
             --cts-gold: #c59b27;
             --cts-gold-dark: #a37c1e;
-            --cts-navy: #0f1a53; /* Exato CMYK C:100 M:90 Y:35 K:50 */
-            --cts-navy-dark: #071038;
+            --cts-navy: #0e1548; /* Azul Marinho Profundo e Vibrante C:100 M:90 Y:35 K:50 */
+            --cts-navy-dark: #070b28;
             --cts-teal: #0d9488;
             --cts-gray-bg: #f8fafc;
             --cts-border: rgba(197, 155, 39, 0.25);
@@ -95,7 +90,7 @@
 
         /* ================= PAGE 1 (FRENTE) ================= */
         .page-header {
-            padding: 25px 40px 18px 40px;
+            padding: 28px 45px 20px 45px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -106,24 +101,23 @@
         .header-brand {
             display: flex;
             align-items: center;
-            gap: 20px;
+            gap: 22px;
         }
 
-        /* Logo Nova Aumentada */
         .brand-logo-img {
-            height: 82px; /* Logo ampliada para máxima visibilidade */
+            height: 85px;
             width: auto;
             object-fit: contain;
         }
 
         .badge-25-years {
-            background: linear-gradient(135deg, var(--cts-navy) 0%, #1e3a5f 100%);
+            background: linear-gradient(135deg, var(--cts-navy) 0%, #1a2468 100%);
             color: #ffffff;
             padding: 8px 16px;
             border-radius: 12px;
             border: 1px solid var(--cts-gold);
             text-align: center;
-            box-shadow: 0 4px 12px rgba(15, 45, 74, 0.15);
+            box-shadow: 0 4px 12px rgba(14, 21, 72, 0.2);
             flex-shrink: 0;
         }
 
@@ -156,24 +150,24 @@
 
         .event-sponsor-tag .tag-title {
             font-family: 'Outfit', sans-serif;
-            font-size: 0.92rem;
+            font-size: 0.95rem;
             font-weight: 700;
             color: var(--cts-teal);
         }
 
         /* Banner Hero da Frente */
         .hero-section {
-            padding: 24px 40px 16px 40px;
+            padding: 24px 45px 16px 45px;
         }
 
         .hero-title-box {
-            background: linear-gradient(135deg, var(--cts-navy) 0%, #16365c 100%);
+            background: linear-gradient(135deg, var(--cts-navy) 0%, #19266e 100%);
             color: #ffffff;
             border-radius: 16px;
-            padding: 26px 32px;
+            padding: 26px 34px;
             position: relative;
             overflow: hidden;
-            box-shadow: 0 8px 22px rgba(15, 45, 74, 0.12);
+            box-shadow: 0 8px 25px rgba(14, 21, 72, 0.2);
         }
 
         .hero-title-box::after {
@@ -223,7 +217,7 @@
 
         /* Seção Principal de Serviços de Saúde */
         .services-section {
-            padding: 10px 40px 18px 40px;
+            padding: 10px 45px 20px 45px;
             flex-grow: 1;
             display: flex;
             flex-direction: column;
@@ -328,7 +322,7 @@
 
         /* Rodapé Minimalista Limpo */
         .page-footer {
-            padding: 14px 40px;
+            padding: 16px 45px;
             background: var(--cts-navy);
             color: #ffffff;
             display: flex;
@@ -347,43 +341,44 @@
         }
 
 
-        /* ================= PAGE 2 (VERSO) ================= */
+        /* ================= PAGE 2 (VERSO - DISTRIBUIÇÃO HARMÔNICA) ================= */
         .page-2 .page-header {
             background: #ffffff;
         }
 
         .page-2-content {
-            padding: 14px 36px;
+            padding: 22px 45px;
             flex-grow: 1;
             display: flex;
             flex-direction: column;
-            gap: 12px;
+            justify-content: space-between;
+            gap: 18px;
         }
 
-        /* Grid de 5 Cards no Verso (2 colunas + 1 card full width) */
+        /* Grid de 5 Cards no Verso */
         .multidisciplinary-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 10px;
+            gap: 12px;
         }
 
         .multi-card {
             background: #ffffff;
             border: 1px solid #e2e8f0;
             border-radius: 12px;
-            padding: 11px 15px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+            padding: 14px 18px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
             display: flex;
             flex-direction: column;
         }
 
         .multi-card h4 {
             font-family: 'Outfit', sans-serif;
-            font-size: 0.88rem;
+            font-size: 0.92rem;
             font-weight: 700;
             color: var(--cts-navy);
-            margin-bottom: 6px;
-            padding-bottom: 4px;
+            margin-bottom: 7px;
+            padding-bottom: 5px;
             border-bottom: 1.5px solid var(--cts-border);
             display: flex;
             align-items: center;
@@ -391,12 +386,12 @@
         }
 
         .multi-card h4 span {
-            font-size: 0.6rem;
+            font-size: 0.62rem;
             font-weight: 600;
             text-transform: uppercase;
             color: var(--cts-gold-dark);
             background: rgba(197, 155, 39, 0.1);
-            padding: 2px 7px;
+            padding: 2px 8px;
             border-radius: 10px;
         }
 
@@ -404,13 +399,13 @@
             list-style: none;
             display: flex;
             flex-direction: column;
-            gap: 3px;
+            gap: 4px;
         }
 
         .multi-card ul li {
-            font-size: 0.74rem;
+            font-size: 0.76rem;
             color: #334155;
-            line-height: 1.3;
+            line-height: 1.35;
             position: relative;
             padding-left: 12px;
         }
@@ -420,7 +415,7 @@
             position: absolute;
             left: 0;
             color: var(--cts-gold);
-            font-size: 0.55rem;
+            font-size: 0.58rem;
             top: 0;
         }
 
@@ -429,17 +424,17 @@
             background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
             border: 1px solid #e2e8f0;
             border-radius: 12px;
-            padding: 10px 16px;
+            padding: 12px 18px;
         }
 
         .partners-title {
             font-family: 'Outfit', sans-serif;
-            font-size: 0.8rem;
+            font-size: 0.82rem;
             font-weight: 800;
             text-transform: uppercase;
             letter-spacing: 2px;
             color: var(--cts-navy);
-            margin-bottom: 6px;
+            margin-bottom: 8px;
             text-align: center;
         }
 
@@ -453,28 +448,29 @@
             background: #ffffff;
             border: 1px solid rgba(197, 155, 39, 0.25);
             border-radius: 8px;
-            padding: 7px 6px;
+            padding: 8px 6px;
             text-align: center;
             box-shadow: 0 2px 6px rgba(0,0,0,0.02);
         }
 
         .partner-name {
             font-family: 'Outfit', sans-serif;
-            font-size: 0.76rem;
+            font-size: 0.78rem;
             font-weight: 700;
             color: var(--cts-navy);
-            line-height: 1.2;
+            line-height: 1.25;
         }
 
-        /* Seção de Endereços & Presença */
+        /* Seção de Endereços & Presença Nacional / Internacional */
         .locations-section {
             background: var(--cts-navy);
             color: #ffffff;
             border-radius: 14px;
-            padding: 14px 18px;
+            padding: 18px 24px;
             display: flex;
             flex-direction: column;
-            gap: 8px;
+            gap: 10px;
+            box-shadow: 0 6px 20px rgba(14, 21, 72, 0.15);
         }
 
         .locations-header {
@@ -482,12 +478,12 @@
             justify-content: space-between;
             align-items: center;
             border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-            padding-bottom: 4px;
+            padding-bottom: 6px;
         }
 
         .locations-header h3 {
             font-family: 'Outfit', sans-serif;
-            font-size: 0.88rem;
+            font-size: 0.92rem;
             font-weight: 700;
             color: var(--cts-gold);
             text-transform: uppercase;
@@ -495,7 +491,7 @@
         }
 
         .locations-header .scope-tag {
-            font-size: 0.62rem;
+            font-size: 0.65rem;
             color: #cbd5e1;
             letter-spacing: 0.5px;
         }
@@ -503,59 +499,28 @@
         .locations-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 8px;
+            gap: 10px;
         }
 
         .location-item h5 {
             font-family: 'Outfit', sans-serif;
-            font-size: 0.75rem;
+            font-size: 0.78rem;
             font-weight: 700;
             color: #ffffff;
-            margin-bottom: 1px;
+            margin-bottom: 2px;
         }
 
         .location-item p {
-            font-size: 0.65rem;
+            font-size: 0.68rem;
             color: #94a3b8;
-            line-height: 1.25;
+            line-height: 1.3;
         }
 
         .location-item .tel {
-            font-size: 0.65rem;
+            font-size: 0.68rem;
             color: var(--cts-gold);
             font-weight: 600;
-            margin-top: 1px;
-        }
-
-        .contact-cta-bar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: rgba(255, 255, 255, 0.06);
-            border: 1px solid rgba(197, 155, 39, 0.3);
-            border-radius: 8px;
-            padding: 6px 12px;
             margin-top: 2px;
-        }
-
-        .contact-cta-text {
-            font-size: 0.72rem;
-            color: #f1f5f9;
-        }
-
-        .contact-cta-text strong {
-            color: var(--cts-gold);
-        }
-
-        .site-link-badge {
-            background: var(--cts-gold);
-            color: #000000;
-            font-family: 'Outfit', sans-serif;
-            font-weight: 700;
-            font-size: 0.75rem;
-            padding: 4px 10px;
-            border-radius: 20px;
-            text-decoration: none;
         }
     </style>
 </head>
@@ -564,7 +529,6 @@
     <!-- ================= PAGE 1 (FRENTE) ================= -->
     <div class="a4-page page-1">
         <div class="safe-area">
-            <div class="print-safety-badge">PDF/X-1a CMYK | Margem de Segurança 3mm</div>
             <div class="top-stripe"></div>
             
             <!-- Cabeçalho -->
@@ -664,7 +628,7 @@
     </div>
 
 
-    <!-- ================= PAGE 2 (VERSO) ================= -->
+    <!-- ================= PAGE 2 (VERSO - DISTRIBUIÇÃO PROPORCIONAL E ELEGANTE) ================= -->
     <div class="a4-page page-2">
         <div class="safe-area">
             <div class="top-stripe"></div>
@@ -682,72 +646,74 @@
 
             <!-- Conteúdo Verso -->
             <main class="page-2-content">
-                <div class="section-header">
-                    <div class="section-icon">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
-                            <polyline points="2 17 12 22 22 17"></polyline>
-                            <polyline points="2 12 12 17 22 12"></polyline>
-                        </svg>
-                    </div>
-                    <h2 class="section-title">Atuação Multidisciplinar para Negócios de Saúde</h2>
-                </div>
-
-                <!-- Grid de 5 Cards no Verso -->
-                <div class="multidisciplinary-grid">
-                    <!-- 1. Startups & Healthtechs -->
-                    <div class="multi-card">
-                        <h4>Inovação, Startups & Tech <span>Healthtechs</span></h4>
-                        <ul>
-                            <li>Modelagem jurídica e estruturação para startups, Fintechs e Healthtechs;</li>
-                            <li>Elaboração de contratos eletrônicos em geral, termos SaaS e TI;</li>
-                            <li>Regulatório de telecomunicações, aplicativos de internet e cloudcomputing;</li>
-                            <li>Licenciamento de tecnologia, alianças estratégicas e auditoria legal em TI.</li>
-                        </ul>
+                <div>
+                    <div class="section-header">
+                        <div class="section-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                                <polyline points="2 17 12 22 22 17"></polyline>
+                                <polyline points="2 12 12 17 22 12"></polyline>
+                            </svg>
+                        </div>
+                        <h2 class="section-title">Atuação Multidisciplinar para Negócios de Saúde</h2>
                     </div>
 
-                    <!-- 2. Compliance & Governança -->
-                    <div class="multi-card">
-                        <h4>Compliance & Integridade <span>Governança</span></h4>
-                        <ul>
-                            <li>Elaboração e implementação de programas de integridade efetivos;</li>
-                            <li>Assessoria para fiel observância da Lei Anticorrupção (Lei nº 12.846/13);</li>
-                            <li>Treinamentos de integridade e criação de canal de denúncias anônimo;</li>
-                            <li>Processos de avaliação do cadastro Empresa Pró-Ética (CGU/Ethos).</li>
-                        </ul>
-                    </div>
+                    <!-- Grid de 5 Cards no Verso -->
+                    <div class="multidisciplinary-grid">
+                        <!-- 1. Startups & Healthtechs -->
+                        <div class="multi-card">
+                            <h4>Inovação, Startups & Tech <span>Healthtechs</span></h4>
+                            <ul>
+                                <li>Modelagem jurídica e estruturação para startups, Fintechs e Healthtechs;</li>
+                                <li>Elaboração de contratos eletrônicos em geral, termos SaaS e TI;</li>
+                                <li>Regulatório de telecomunicações, aplicativos de internet e cloudcomputing;</li>
+                                <li>Licenciamento de tecnologia, alianças estratégicas e auditoria legal em TI.</li>
+                            </ul>
+                        </div>
 
-                    <!-- 3. Direito Tributário -->
-                    <div class="multi-card">
-                        <h4>Direito Tributário <span>Eficiência Fiscal</span></h4>
-                        <ul>
-                            <li>Planejamento estratégico e tributário para eliminar/reduzir impacto fiscal;</li>
-                            <li>Identificação e auxílio na recuperação de créditos tributários;</li>
-                            <li>Aplicação de benefícios fiscais federais, regionais e locais;</li>
-                            <li>Defesas administrativas e acompanhamento de fiscalizações.</li>
-                        </ul>
-                    </div>
+                        <!-- 2. Compliance & Governança -->
+                        <div class="multi-card">
+                            <h4>Compliance & Integridade <span>Governança</span></h4>
+                            <ul>
+                                <li>Elaboração e implementação de programas de integridade efetivos;</li>
+                                <li>Assessoria para fiel observância da Lei Anticorrupção (Lei nº 12.846/13);</li>
+                                <li>Treinamentos de integridade e criação de canal de denúncias anônimo;</li>
+                                <li>Processos de avaliação do cadastro Empresa Pró-Ética (CGU/Ethos).</li>
+                            </ul>
+                        </div>
 
-                    <!-- 4. Empresarial & Societário -->
-                    <div class="multi-card">
-                        <h4>Empresarial & Societário <span>Societário</span></h4>
-                        <ul>
-                            <li>Constituição de sociedades, acordos de acionistas/cotistas e governança;</li>
-                            <li>Planejamento, reestruturação e reorganização societária (M&A, fusão e cisão);</li>
-                            <li>Criação de Grupos Econômicos (Holdings) e gestão de atos societários;</li>
-                            <li>Minimização de litígios societários e redução de custos regulatórios.</li>
-                        </ul>
-                    </div>
+                        <!-- 3. Direito Tributário -->
+                        <div class="multi-card">
+                            <h4>Direito Tributário <span>Eficiência Fiscal</span></h4>
+                            <ul>
+                                <li>Planejamento estratégico e tributário para eliminar/reduzir impacto fiscal;</li>
+                                <li>Identificação e auxílio na recuperação de créditos tributários;</li>
+                                <li>Aplicação de benefícios fiscais federais, regionais e locais;</li>
+                                <li>Defesas administrativas e acompanhamento de fiscalizações.</li>
+                            </ul>
+                        </div>
 
-                    <!-- 5. Trabalhista & Previdenciário (Card Expandido Full) -->
-                    <div class="multi-card" style="grid-column: span 2;">
-                        <h4>Trabalhista & Previdenciário <span>Prevenção & Defesa</span></h4>
-                        <ul>
-                            <li>Análise jurídica preventiva das contratações de mão de obra para evitar demandas trabalhistas futuras;</li>
-                            <li>Atuação contenciosa em reclamações trabalhistas (horas extras, intervalos, dissídios e acordos coletivos);</li>
-                            <li>Análise e adequação das empresas em relação às obrigações previdenciárias, e-Social e Reforma Trabalhista;</li>
-                            <li>Elaboração de Códigos de Conduta organizacionais e diretrizes de monitoramento (Compliance Trabalhista).</li>
-                        </ul>
+                        <!-- 4. Empresarial & Societário -->
+                        <div class="multi-card">
+                            <h4>Empresarial & Societário <span>Societário</span></h4>
+                            <ul>
+                                <li>Constituição de sociedades, acordos de acionistas/cotistas e governança;</li>
+                                <li>Planejamento, reestruturação e reorganização societária (M&A, fusão e cisão);</li>
+                                <li>Criação de Grupos Econômicos (Holdings) e gestão de atos societários;</li>
+                                <li>Minimização de litígios societários e redução de custos regulatórios.</li>
+                            </ul>
+                        </div>
+
+                        <!-- 5. Trabalhista & Previdenciário (Card Expandido Full) -->
+                        <div class="multi-card" style="grid-column: span 2;">
+                            <h4>Trabalhista & Previdenciário <span>Prevenção & Defesa</span></h4>
+                            <ul>
+                                <li>Análise jurídica preventiva das contratações de mão de obra para evitar demandas trabalhistas futuras;</li>
+                                <li>Atuação contenciosa em reclamações trabalhistas (horas extras, intervalos, dissídios e acordos coletivos);</li>
+                                <li>Análise e adequação das empresas em relação às obrigações previdenciárias, e-Social e Reforma Trabalhista;</li>
+                                <li>Elaboração de Códigos de Conduta organizacionais e diretrizes de monitoramento (Compliance Trabalhista).</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
 
