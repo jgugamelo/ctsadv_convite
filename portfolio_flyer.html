@@ -75,12 +75,12 @@
             }
         }
 
-        /* Cores Institucionais CTSADV (Equivalentes CMYK de Alta Fidelidade) */
+        /* Cores Institucionais CTSADV (CMYK C:100 M:90 Y:35 K:50) */
         :root {
             --cts-gold: #c59b27;
             --cts-gold-dark: #a37c1e;
-            --cts-navy: #0f2d4a;
-            --cts-navy-dark: #071728;
+            --cts-navy: #0f1a53; /* Exato CMYK C:100 M:90 Y:35 K:50 */
+            --cts-navy-dark: #071038;
             --cts-teal: #0d9488;
             --cts-gray-bg: #f8fafc;
             --cts-border: rgba(197, 155, 39, 0.25);
@@ -326,34 +326,24 @@
             top: 1px;
         }
 
-        /* Rodapé da Página 1 */
+        /* Rodapé Minimalista Limpo */
         .page-footer {
-            padding: 16px 40px;
+            padding: 14px 40px;
             background: var(--cts-navy);
             color: #ffffff;
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
-        }
-
-        .footer-left-info {
-            display: flex;
-            gap: 25px;
-            font-size: 0.75rem;
-            color: #cbd5e1;
-        }
-
-        .footer-left-info strong {
-            color: var(--cts-gold);
         }
 
         .footer-web {
             font-family: 'Outfit', sans-serif;
-            font-size: 0.95rem;
+            font-size: 1.05rem;
             font-weight: 700;
             color: #ffffff;
             text-decoration: none;
-            letter-spacing: 1px;
+            letter-spacing: 2px;
+            text-transform: lowercase;
         }
 
 
@@ -668,11 +658,7 @@
 
             <!-- Rodapé da Página 1 -->
             <footer class="page-footer">
-                <div class="footer-left-info">
-                    <span><strong>Site:</strong> ctsadv.com.br</span>
-                    <span><strong>Presença:</strong> RJ | SP | Santos | BSB | Juiz de Fora/MG | Colômbia | México</span>
-                </div>
-                <a href="https://ctsadv.com.br" class="footer-web">CTSADV.COM.BR</a>
+                <a href="https://ctsadv.com.br" class="footer-web" target="_blank">ctsadv.com.br</a>
             </footer>
         </div>
     </div>
@@ -681,7 +667,6 @@
     <!-- ================= PAGE 2 (VERSO) ================= -->
     <div class="a4-page page-2">
         <div class="safe-area">
-            <div class="print-safety-badge">PDF/X-1a CMYK | Margem de Segurança 3mm</div>
             <div class="top-stripe"></div>
 
             <!-- Cabeçalho Página 2 -->
@@ -826,20 +811,12 @@
                             <p>Colômbia (Bogotá) | México (Querétaro)</p>
                         </div>
                     </div>
-
-                    <div class="contact-cta-bar">
-                        <span class="contact-cta-text">Agende uma consulta com nossos especialistas em <strong>Direito Médico & Saúde</strong></span>
-                        <a href="https://ctsadv.com.br" class="site-link-badge" target="_blank">ctsadv.com.br</a>
-                    </div>
                 </section>
             </main>
 
             <!-- Rodapé Página 2 -->
             <footer class="page-footer">
-                <div class="footer-left-info">
-                    <span>© 2026 Cursino & Teodoro da Silva Advogados Associados. Todos os direitos reservados.</span>
-                </div>
-                <a href="https://ctsadv.com.br" class="footer-web">CTSADV.COM.BR</a>
+                <a href="https://ctsadv.com.br" class="footer-web" target="_blank">ctsadv.com.br</a>
             </footer>
         </div>
     </div>
