@@ -74,23 +74,16 @@
         :root {
             --cts-gold: #c59b27;
             --cts-gold-dark: #a37c1e;
-            --cts-navy: #0e1548; /* Azul Marinho Profundo e Vibrante C:100 M:90 Y:35 K:50 */
+            --cts-navy: #0e1548; /* Azul Marinho Profundo C:100 M:90 Y:35 K:50 */
             --cts-navy-dark: #070b28;
             --cts-teal: #0d9488;
             --cts-gray-bg: #f8fafc;
             --cts-border: rgba(197, 155, 39, 0.25);
         }
 
-        /* Header Decorativo em Sangria */
-        .top-stripe {
-            height: 8px;
-            background: linear-gradient(90deg, var(--cts-navy) 0%, var(--cts-gold) 60%, var(--cts-teal) 100%);
-            width: 100%;
-        }
-
         /* ================= PAGE 1 (FRENTE) ================= */
         .page-header {
-            padding: 28px 45px 20px 45px;
+            padding: 32px 45px 22px 45px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -155,30 +148,19 @@
             color: var(--cts-teal);
         }
 
-        /* Banner Hero da Frente */
+        /* Banner Hero da Frente - Fundo Azul Solido sem circulo */
         .hero-section {
             padding: 24px 45px 16px 45px;
         }
 
         .hero-title-box {
-            background: linear-gradient(135deg, var(--cts-navy) 0%, #19266e 100%);
+            background: var(--cts-navy);
             color: #ffffff;
             border-radius: 16px;
-            padding: 26px 34px;
+            padding: 28px 36px;
             position: relative;
             overflow: hidden;
             box-shadow: 0 8px 25px rgba(14, 21, 72, 0.2);
-        }
-
-        .hero-title-box::after {
-            content: '';
-            position: absolute;
-            right: -30px;
-            bottom: -30px;
-            width: 180px;
-            height: 180px;
-            background: radial-gradient(circle, rgba(197, 155, 39, 0.25) 0%, transparent 70%);
-            pointer-events: none;
         }
 
         .hero-subtitle-tag {
@@ -217,7 +199,7 @@
 
         /* Seção Principal de Serviços de Saúde */
         .services-section {
-            padding: 10px 45px 20px 45px;
+            padding: 10px 45px 16px 45px;
             flex-grow: 1;
             display: flex;
             flex-direction: column;
@@ -320,14 +302,17 @@
             top: 1px;
         }
 
-        /* Rodapé Minimalista Limpo */
+        /* Rodapé Contido Dentro da Margem de Segurança */
         .page-footer {
-            padding: 16px 45px;
+            margin: 10px 45px 22px 45px;
+            padding: 14px 30px;
             background: var(--cts-navy);
             color: #ffffff;
             display: flex;
             justify-content: center;
             align-items: center;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(14, 21, 72, 0.15);
         }
 
         .footer-web {
@@ -336,7 +321,7 @@
             font-weight: 700;
             color: #ffffff;
             text-decoration: none;
-            letter-spacing: 2px;
+            letter-spacing: 2.5px;
             text-transform: lowercase;
         }
 
@@ -347,12 +332,12 @@
         }
 
         .page-2-content {
-            padding: 22px 45px;
+            padding: 22px 45px 10px 45px;
             flex-grow: 1;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            gap: 18px;
+            gap: 16px;
         }
 
         /* Grid de 5 Cards no Verso */
@@ -529,8 +514,6 @@
     <!-- ================= PAGE 1 (FRENTE) ================= -->
     <div class="a4-page page-1">
         <div class="safe-area">
-            <div class="top-stripe"></div>
-            
             <!-- Cabeçalho -->
             <header class="page-header">
                 <div class="header-brand">
@@ -546,7 +529,7 @@
                 </div>
             </header>
 
-            <!-- Banner Hero -->
+            <!-- Banner Hero sem barra nem circulo -->
             <section class="hero-section">
                 <div class="hero-title-box">
                     <span class="hero-subtitle-tag">Direito Médico, Tecnologia e Governança</span>
@@ -620,7 +603,7 @@
                 </div>
             </main>
 
-            <!-- Rodapé da Página 1 -->
+            <!-- Rodapé Contido na Margem de Segurança -->
             <footer class="page-footer">
                 <a href="https://ctsadv.com.br" class="footer-web" target="_blank">ctsadv.com.br</a>
             </footer>
@@ -631,8 +614,6 @@
     <!-- ================= PAGE 2 (VERSO - DISTRIBUIÇÃO PROPORCIONAL E ELEGANTE) ================= -->
     <div class="a4-page page-2">
         <div class="safe-area">
-            <div class="top-stripe"></div>
-
             <!-- Cabeçalho Página 2 -->
             <header class="page-header">
                 <div class="header-brand">
@@ -780,7 +761,7 @@
                 </section>
             </main>
 
-            <!-- Rodapé Página 2 -->
+            <!-- Rodapé Contido na Margem de Segurança -->
             <footer class="page-footer">
                 <a href="https://ctsadv.com.br" class="footer-web" target="_blank">ctsadv.com.br</a>
             </footer>
