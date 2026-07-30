@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CTSADV - Folheto Institucional A4 (Opção Sem Sócios)</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Tamanho Exato Solicitado pela Gráfica: 21,30cm x 30,00cm */
+        @page {
+            size: 21.30cm 30.00cm;
+            margin: 0;
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #1e293b;
+            background-color: #f1f5f9;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+        
+        /* Container A4 com Sangria Exata de 21,30cm x 30,00cm (805px x 1134px a 96DPI) */
+        .a4-page {
+            width: 805px;
+            height: 1134px;
+            position: relative;
+            background: #ffffff;
+            margin: 0 auto;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 0;
+        }
+
+        .safe-area {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+            background: #ffffff;
+        }
+
+        @media print {
+            body {
+                background: none;
+            }
+            .a4-page {
+                margin: 0;
+                box-shadow: none;
+                page-break-after: always;
+            }
+            .a4-page:last-child {
+                page-break-after: avoid;
+            }
+        }
+
+        /* Cores Institucionais CTSADV (C:100 M:90 Y:35 K:50 -> #0e1548) */
+        :root {
+            --cts-gold: #c59b27;
+            --cts-gold-dark: #a37c1e;
+            --cts-navy: #0e1548; /* Azul Marinho Profundo C:100 M:90 Y:35 K:50 */
+            --cts-navy-dark: #070b28;
+            --cts-teal: #0d9488;
+            --cts-gray-bg: #f8fafc;
+            --cts-border: rgba(197, 155, 39, 0.25);
+        }
+
+        /* ================= PAGE 1 (FRENTE) ================= */
+        .page-header {
+            padding: 32px 45px 22px 45px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid var(--cts-border);
+            background: linear-gradient(180deg, #ffffff 0%, #fdfbf7 100%);
+        }
+
+        .header-brand {
+            display: flex;
+            align-items: center;
+            gap: 22px;
+        }
+
+        .brand-logo-img {
+            height: 85px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .badge-25-years {
+            background: linear-gradient(135deg, var(--cts-navy) 0%, #1a2468 100%);
+            color: #ffffff;
+            padding: 8px 16px;
+            border-radius: 12px;
+            border: 1px solid var(--cts-gold);
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(14, 21, 72, 0.2);
+            flex-shrink: 0;
+        }
+
+        .badge-25-years .num {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.35rem;
+            font-weight: 800;
+            color: var(--cts-gold);
+            line-height: 1;
+        }
+
+        .badge-25-years .txt {
+            font-size: 0.62rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-weight: 700;
+        }
+
+        .event-sponsor-tag {
+            text-align: right;
+        }
+
+        .event-sponsor-tag .tag-label {
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #64748b;
+            font-weight: 600;
+        }
+
+        .event-sponsor-tag .tag-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--cts-teal);
+        }
+
+        /* Banner Hero da Frente */
+        .hero-section {
+            padding: 24px 45px 16px 45px;
+        }
+
+        .hero-title-box {
+            background: var(--cts-navy);
+            color: #ffffff;
+            border-radius: 16px;
+            padding: 28px 36px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(14, 21, 72, 0.2);
+        }
+
+        .hero-subtitle-tag {
+            display: inline-block;
+            background: rgba(197, 155, 39, 0.2);
+            border: 1px solid var(--cts-gold);
+            color: #fef08a;
+            font-size: 0.72rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            padding: 4px 12px;
+            border-radius: 20px;
+            margin-bottom: 10px;
+        }
+
+        .hero-main-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2.15rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 10px;
+            color: #ffffff;
+        }
+
+        .hero-main-title span {
+            color: var(--cts-gold);
+        }
+
+        .hero-description {
+            font-size: 0.9rem;
+            color: #cbd5e1;
+            line-height: 1.55;
+            max-width: 680px;
+        }
+
+        /* Seção Principal de Serviços de Saúde */
+        .services-section {
+            padding: 10px 45px 16px 45px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 4px;
+        }
+
+        .section-icon {
+            width: 32px;
+            height: 32px;
+            background: rgba(197, 155, 39, 0.12);
+            border: 1px solid var(--cts-gold);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--cts-gold-dark);
+        }
+
+        .section-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--cts-navy);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Grid de 3 Cards Principais */
+        .medical-services-container {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .service-card {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-top: 3.5px solid var(--cts-gold);
+            border-radius: 14px;
+            padding: 18px 22px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .service-card.card-featured {
+            background: linear-gradient(135deg, #fdfbf7 0%, #ffffff 100%);
+            border-top-color: var(--cts-navy);
+            border-left: 4px solid var(--cts-teal);
+        }
+
+        .service-card h4 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--cts-navy);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .service-card h4 svg {
+            width: 20px;
+            height: 20px;
+            color: var(--cts-gold);
+            flex-shrink: 0;
+        }
+
+        .service-card ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 7px;
+        }
+
+        .service-card ul li {
+            font-size: 0.82rem;
+            color: #334155;
+            line-height: 1.45;
+            position: relative;
+            padding-left: 16px;
+        }
+
+        .service-card ul li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--cts-gold-dark);
+            font-weight: bold;
+            font-size: 1rem;
+            line-height: 1;
+            top: 1px;
+        }
+
+        /* Rodapé Institucional com Margem de Segurança Interna Ampla (28px no Fundo) */
+        .page-footer {
+            width: 100%;
+            background: var(--cts-navy);
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 16px 45px 28px 45px;
+        }
+
+        .footer-web {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #ffffff;
+            text-decoration: none;
+            letter-spacing: 3px;
+            text-transform: lowercase;
+        }
+
+
+        /* ================= PAGE 2 (VERSO - OPÇÃO SEM SÓCIOS - ESPAÇAMENTO HARMÔNICO EXPANSO) ================= */
+        .page-2 .page-header {
+            background: #ffffff;
+        }
+
+        .page-2-content {
+            padding: 24px 45px 16px 45px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        /* Grid de 5 Cards no Verso com Mais Espaço de Leitura */
+        .multidisciplinary-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 14px;
+        }
+
+        .multi-card {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 16px 20px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .multi-card h4 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.94rem;
+            font-weight: 700;
+            color: var(--cts-navy);
+            margin-bottom: 8px;
+            padding-bottom: 6px;
+            border-bottom: 1.5px solid var(--cts-border);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .multi-card h4 span {
+            font-size: 0.63rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            color: var(--cts-gold-dark);
+            background: rgba(197, 155, 39, 0.1);
+            padding: 2px 8px;
+            border-radius: 10px;
+        }
+
+        .multi-card ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .multi-card ul li {
+            font-size: 0.78rem;
+            color: #334155;
+            line-height: 1.4;
+            position: relative;
+            padding-left: 14px;
+        }
+
+        .multi-card ul li::before {
+            content: '▪';
+            position: absolute;
+            left: 0;
+            color: var(--cts-gold);
+            font-size: 0.58rem;
+            top: 1px;
+        }
+
+        /* Seção de Endereços Expandida e Nobre */
+        .locations-section {
+            background: var(--cts-navy);
+            color: #ffffff;
+            border-radius: 14px;
+            padding: 22px 28px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            box-shadow: 0 6px 20px rgba(14, 21, 72, 0.15);
+        }
+
+        .locations-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+            padding-bottom: 8px;
+        }
+
+        .locations-header h3 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.96rem;
+            font-weight: 700;
+            color: var(--cts-gold);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .locations-header .scope-tag {
+            font-size: 0.68rem;
+            color: #cbd5e1;
+            letter-spacing: 0.5px;
+        }
+
+        .locations-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 14px;
+        }
+
+        .location-item h5 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.82rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 2px;
+        }
+
+        .location-item p {
+            font-size: 0.7rem;
+            color: #94a3b8;
+            line-height: 1.35;
+        }
+
+        .location-item .tel {
+            font-size: 0.7rem;
+            color: var(--cts-gold);
+            font-weight: 600;
+            margin-top: 2px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ================= PAGE 1 (FRENTE) ================= -->
+    <div class="a4-page page-1">
+        <div class="safe-area">
+            <!-- Cabeçalho -->
+            <header class="page-header">
+                <div class="header-brand">
+                    <img src="assets/Nova_Logo_CTSADV.png" alt="Cursino & Teodoro da Silva Advogados" class="brand-logo-img">
+                    <div class="badge-25-years">
+                        <div class="num">+ 25</div>
+                        <div class="txt">Anos</div>
+                    </div>
+                </div>
+                <div class="event-sponsor-tag">
+                    <p class="tag-label">Apoiador Oficial</p>
+                    <p class="tag-title">Inovação na Área Médica</p>
+                </div>
+            </header>
+
+            <!-- Banner Hero -->
+            <section class="hero-section">
+                <div class="hero-title-box">
+                    <span class="hero-subtitle-tag">Direito Médico, Tecnologia e Governança</span>
+                    <h1 class="hero-main-title">Segurança Jurídica em Inovação na <span>Área Médica</span></h1>
+                    <p class="hero-description">
+                        Atuamos com expertise na construção de camadas de proteção patrimonial, conformidade regulatória e mitigação de riscos operacionais e éticos.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Seção Principal de Serviços de Saúde -->
+            <main class="services-section">
+                <div class="section-header">
+                    <div class="section-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                        </svg>
+                    </div>
+                    <h2 class="section-title">Áreas de Atuação em Direito Médico e da Saúde</h2>
+                </div>
+
+                <div class="medical-services-container">
+                    <!-- Card 1: Atendimento ao Médico -->
+                    <div class="service-card">
+                        <h4>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="12" cy="7" r="4"></circle>
+                            </svg>
+                            Atendimento ao Médico
+                        </h4>
+                        <ul>
+                            <li>Defesa, consultoria e orientação em acusações de Má Prática e Erro Médico (esferas Judicial e Administrativa);</li>
+                            <li>Defesa em Procedimentos Ético-Disciplinares e Sindicâncias perante CRM e CFM;</li>
+                            <li>Consultoria especializada em Responsabilidade Civil Médica, Consentimento Informado e Prontuários;</li>
+                            <li>Atuação preventiva em questões criminais ligadas ao exercício da medicina.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Card 2: Instituições de Saúde -->
+                    <div class="service-card card-featured">
+                        <h4>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="3" width="18" height="18" rx="2"></rect>
+                                <path d="M9 12h6m-3-3v6"></path>
+                            </svg>
+                            Instituições de Saúde (Hospitais, Clínicas & Laboratórios)
+                        </h4>
+                        <ul>
+                            <li>Assessoria jurídica para revisão e otimização de rotinas, protocolos de atendimento e procedimentos médico-administrativos;</li>
+                            <li>Suporte jurídico integral para implementação segura de novas tecnologias, IA e ferramentas digitais na medicina;</li>
+                            <li>Realização de programas, reuniões e treinamentos da equipe técnica sobre Segurança Jurídica e Regras de Compliance.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Card 3: LGPD & Governança Médica -->
+                    <div class="service-card">
+                        <h4>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                            </svg>
+                            LGPD & Governança Corporativa Médica
+                        </h4>
+                        <ul>
+                            <li>Consultoria em governança corporativa e compliance para clínicas e sociedades médicas, garantindo transparência;</li>
+                            <li>Assessoria jurídica em temas críticos como LGPD na saúde, proteção de dados sensíveis e práticas seguras para médicos;</li>
+                            <li>Segurança jurídica nas relações entre sócios, parceiros e em operações comerciais no setor de saúde.</li>
+                        </ul>
+                    </div>
+                </div>
+            </main>
+
+            <!-- Rodapé Institucional Identico com 28px de Sangria Interna na Base -->
+            <footer class="page-footer">
+                <a href="https://ctsadv.com.br" class="footer-web" target="_blank">ctsadv.com.br</a>
+            </footer>
+        </div>
+    </div>
+
+
+    <!-- ================= PAGE 2 (VERSO - OPÇÃO SEM SÓCIOS) ================= -->
+    <div class="a4-page page-2">
+        <div class="safe-area">
+            <!-- Cabeçalho Página 2 -->
+            <header class="page-header">
+                <div class="header-brand">
+                    <img src="assets/Nova_Logo_CTSADV.png" alt="Cursino & Teodoro da Silva Advogados" class="brand-logo-img">
+                </div>
+                <div class="event-sponsor-tag">
+                    <p class="tag-label">Soluções Corporativas Integradas</p>
+                    <p class="tag-title">Gestão Jurídica de Excelência</p>
+                </div>
+            </header>
+
+            <!-- Conteúdo Verso -->
+            <main class="page-2-content">
+                <div>
+                    <div class="section-header">
+                        <div class="section-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                                <polyline points="2 17 12 22 22 17"></polyline>
+                                <polyline points="2 12 12 17 22 12"></polyline>
+                            </svg>
+                        </div>
+                        <h2 class="section-title">Atuação Multidisciplinar para Negócios de Saúde</h2>
+                    </div>
+
+                    <!-- Grid de 5 Cards no Verso com Espaçamento Amplo -->
+                    <div class="multidisciplinary-grid">
+                        <!-- 1. Startups & Healthtechs -->
+                        <div class="multi-card">
+                            <h4>Inovação, Startups & Tech <span>Healthtechs</span></h4>
+                            <ul>
+                                <li>Modelagem jurídica e estruturação para startups, Fintechs e Healthtechs;</li>
+                                <li>Elaboração de contratos eletrônicos em geral, termos SaaS e TI;</li>
+                                <li>Regulatório de telecomunicações, aplicativos de internet e cloudcomputing;</li>
+                                <li>Licenciamento de tecnologia, alianças estratégicas e auditoria legal em TI.</li>
+                            </ul>
+                        </div>
+
+                        <!-- 2. Compliance & Governança -->
+                        <div class="multi-card">
+                            <h4>Compliance & Integridade <span>Governança</span></h4>
+                            <ul>
+                                <li>Elaboração e implementação de programas de integridade efetivos;</li>
+                                <li>Assessoria para fiel observância da Lei Anticorrupção (Lei nº 12.846/13);</li>
+                                <li>Treinamentos de integridade e criação de canal de denúncias anônimo;</li>
+                                <li>Processos de avaliação do cadastro Empresa Pró-Ética (CGU/Ethos).</li>
+                            </ul>
+                        </div>
+
+                        <!-- 3. Direito Tributário -->
+                        <div class="multi-card">
+                            <h4>Direito Tributário <span>Eficiência Fiscal</span></h4>
+                            <ul>
+                                <li>Planejamento estratégico e tributário para eliminar/reduzir impacto fiscal;</li>
+                                <li>Identificação e auxílio na recuperação de créditos tributários;</li>
+                                <li>Aplicação de benefícios fiscais federais, regionais e locais;</li>
+                                <li>Defesas administrativas e acompanhamento de fiscalizações.</li>
+                            </ul>
+                        </div>
+
+                        <!-- 4. Empresarial & Societário -->
+                        <div class="multi-card">
+                            <h4>Empresarial & Societário <span>Societário</span></h4>
+                            <ul>
+                                <li>Constituição de sociedades, acordos de acionistas/cotistas e governança;</li>
+                                <li>Planejamento, reestruturação e reorganização societária (M&A, fusão e cisão);</li>
+                                <li>Criação de Grupos Econômicos (Holdings) e gestão de atos societários;</li>
+                                <li>Minimização de litígios societários e redução de custos regulatórios.</li>
+                            </ul>
+                        </div>
+
+                        <!-- 5. Trabalhista & Previdenciário (Card Expandido Full) -->
+                        <div class="multi-card" style="grid-column: span 2;">
+                            <h4>Trabalhista & Previdenciário <span>Prevenção & Defesa</span></h4>
+                            <ul>
+                                <li>Análise jurídica preventiva das contratações de mão de obra para evitar demandas trabalhistas futuras;</li>
+                                <li>Atuação contenciosa em reclamações trabalhistas (horas extras, intervalos, dissídios e acordos coletivos);</li>
+                                <li>Análise e adequação das empresas em relação às obrigações previdenciárias, e-Social e Reforma Trabalhista;</li>
+                                <li>Elaboração de Códigos de Conduta organizacionais e diretrizes de monitoramento (Compliance Trabalhista).</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Seção de Endereços & Presença Nacional / Internacional Expandida -->
+                <section class="locations-section">
+                    <div class="locations-header">
+                        <h3>Unidades & Presença Global</h3>
+                        <span class="scope-tag">Atuação Nacional e Internacional</span>
+                    </div>
+
+                    <div class="locations-grid">
+                        <div class="location-item">
+                            <h5>Rio de Janeiro / RJ</h5>
+                            <p>Rua México, nº 31, 16º andar, Centro</p>
+                            <p class="tel">(21) 2510-3307</p>
+                        </div>
+
+                        <div class="location-item">
+                            <h5>São Paulo / SP</h5>
+                            <p>SPACES Vila Olímpia - R. Gomes de Carvalho, 911</p>
+                            <p class="tel">(11) 4349-1318</p>
+                        </div>
+
+                        <div class="location-item">
+                            <h5>Brasília / DF</h5>
+                            <p>SCN, Q. 02, Bloco B, nº 100, Ed. Varig</p>
+                            <p class="tel">(61) 3532-7022</p>
+                        </div>
+
+                        <div class="location-item">
+                            <h5>Santos / SP</h5>
+                            <p>Av. Ana Costa, 433, 4º andar (Torre B)</p>
+                        </div>
+
+                        <div class="location-item">
+                            <h5>Juiz de Fora / MG</h5>
+                            <p>Av. Barão do Rio Branco, 2595, sala 305</p>
+                        </div>
+
+                        <div class="location-item">
+                            <h5>Internacional</h5>
+                            <p>Colômbia (Bogotá) | México (Querétaro)</p>
+                        </div>
+                    </div>
+                </section>
+            </main>
+
+            <!-- Rodapé Institucional Identico com 28px de Sangria Interna na Base -->
+            <footer class="page-footer">
+                <a href="https://ctsadv.com.br" class="footer-web" target="_blank">ctsadv.com.br</a>
+            </footer>
+        </div>
+    </div>
+
+</body>
+</html>
