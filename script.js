@@ -206,7 +206,8 @@ if (addCalendarBtn) {
             "Apoio e Patrocínio:\n" +
             "- CTSADV\n" +
             "- AVIVUS HEALTHTECH\n" +
-            "- MARAVALLEY\n\n" +
+            "- MARAVALLEY\n" +
+            "- CER LEBLON\n\n" +
             "Cronograma:\n" +
             "- 16h às 20h: Painel & Debates sobre Inovação na Medicina\n" +
             "- 19h às 20h: Happy Hour com Chopp liberado!"
