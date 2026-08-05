@@ -200,9 +200,9 @@ const addCalendarBtn = document.getElementById('add-calendar-btn');
 
 if (addCalendarBtn) {
     addCalendarBtn.addEventListener('click', () => {
-        const title = encodeURIComponent("Inovação na Área Médica - Rio como Protagonista");
+        const title = encodeURIComponent("Inovação para Profissionais de Saúde - Rio como Protagonista");
         const details = encodeURIComponent(
-            "Evento de inovação médica promovido pela comunidade CRUX.\n\n" +
+            "Evento de inovação para profissionais de saúde promovido pela comunidade CRUX.\n\n" +
             "Apoio e Patrocínio:\n" +
             "- CTSADV\n" +
             "- AVIVUS HEALTHTECH\n" +
